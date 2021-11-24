@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Exit immediately on errors, and echo commands as they are executed.
+set -ex
+
+# Copy the mu-plugins loader file.
+rsync vendor/pantheon-systems/pantheon-wp-loader/loader.php web/wp-content/mu-plugins/
+
+# Copy over the mu-plugins folder from core wp, if it exists.
+if [ -d "web/wp/wp-content/mu-plugins/" ]; then
+  rsync -r web/wp/wp-content/mu-plugins/* web/wp-content/mu-plugins/
+fi
+
+# Delete the core wp-config file, if it exists.
+if [ -f "web/wp/wp-config.php" ]; then
+  rm web/wp/wp-config.php
+fi
+
+# Remove the wp-content directory from core WordPress.
+if [ -d "web/wp/wp-content" ]; then
+  rm -rf web/wp/wp-content
+fi
