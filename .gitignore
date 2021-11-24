@@ -1,0 +1,35 @@
+# Ignore composer files.
+/vendor/
+
+# Ignore /packages/ folder for local development.
+# This allows for any of the packages stored here locally to be Git
+# repositories themselves which will override the default repository locations.
+/packages/
+
+# Ignore the wp-content directory
+web/wp-content/*
+
+# Ignore mu-plugins
+!web/wp-content/mu-plugins/
+web/wp-content/mu-plugins/*
+
+# Ignore plugins
+!web/wp-content/plugins/
+web/wp-content/plugins/*
+
+# Ignore themes
+!web/wp-content/themes/
+web/wp-content/themes/*
+
+# Ignore WordPress core
+web/wp
+
+# Don't ignore WP configuration
+!web/wp-content/config/
+
+# Ignore private stuff
+!web/private/
+web/private/*
+!web/private/scripts/
+web/private/scripts/quicksilver
+!web/private/config/
