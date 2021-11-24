@@ -1,0 +1,25 @@
+{
+    "name": "pantheon-upstreams/upstream-configuration",
+    "type": "project",
+    "version": "1.0.0",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        }
+    ],
+    "require": {
+        "pantheon-systems/quicksilver-pushback": "^2",
+        "roots/bedrock": "*",
+        "roots/wp-password-bcrypt": "^1.0.0",
+        "wpackagist-plugin/lh-hsts": "^1.25",
+        "wpackagist-plugin/pantheon-advanced-page-cache": ">=0.3.0",
+        "wpackagist-plugin/wp-native-php-sessions": ">=0.6.9",
+        "wpackagist-theme/twentynineteen": "^2.1",
+        "wp-coding-standards/wpcs": "^1.2.1"
+    },
+    "extra": {
+    }
+}
