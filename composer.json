@@ -1,0 +1,86 @@
+{
+    "name": "pantheon-systems/wordpress-bedrock-recommended",
+    "description": "WordPress core, powered by Bedrock, on Pantheon.",
+    "type": "project",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        },
+        {
+            "type": "path",
+            "url": "upstream-configuration"
+        },
+        {
+            "type": "path",
+            "url": "packages/*",
+            "symlink": true
+        }
+    ],
+    "require": {
+        "composer/installers": "^1.9",
+        "pantheon-systems/wordpress-integrations": "*",
+        "pantheon-upstreams/upstream-configuration": "*"
+    },
+    "config": {
+        "vendor-dir": "vendor",
+        "preferred-install": "dist",
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "platform": {
+          "php": "7.4"
+        }
+    },
+    "extra": {
+        "wordpress-install-dir": "web/wp",
+        "build-env": {
+            "install-cms": [
+                "wp core install --title={site-name} --url={site-url} --admin_user={account-name} --admin_email={account-mail} --admin_password={account-pass}",
+                "wp option update permalink_structure '/%postname%/'"
+            ]
+        },
+        "installer-paths": {
+            "web/wp-content/mu-plugins/pantheon/": "pantheon-systems/pantheon-wp-muplugin",
+            "web/wp-content/mu-plugins/{$name}/": [
+                "type:wordpress-muplugin",
+                "wpackagist-plugin/lh-hsts",
+                "wpackagist-plugin/pantheon-advanced-page-cache",
+                "wpackagist-plugin/wp-native-php-sessions"
+            ],
+            "web/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+            "web/wp-content/themes/{$name}/": ["type:wordpress-theme"],
+            "web/private/scripts/quicksilver/{$name}/": ["type:quicksilver-script"]
+        }
+    },
+    "scripts": {
+        "build-assets": [
+            "@prepare-for-pantheon",
+            "composer install --no-dev --no-ansi --no-interaction --optimize-autoloader --no-progress"
+        ],
+        "cleanup": [
+            "./scripts/composer/cleanup-composer"
+        ],
+        "code-sniff": [
+            "./vendor/bin/phpcs --standard=WordPress ./web/wp-content"
+        ],
+        "lint": "find web/wp-content -name '*.php' -exec php -l {} \\;",
+        "post-install-cmd": [
+            "@cleanup",
+            "WordPressProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "post-update-cmd": [
+            "@cleanup",
+            "WordPressProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "post-create-project-cmd": [
+            "@cleanup",
+            "WordPressProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "prepare-for-pantheon": "WordPressProject\\composer\\ScriptHandler::prepareForPantheon",
+        "unit-test": [
+            "./vendor/bin/phpunit tests/unit/*"
+        ]
+    }
+}
