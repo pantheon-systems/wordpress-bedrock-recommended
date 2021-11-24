@@ -1,3 +1,7 @@
+###
+### GitHub repository .gitignore section
+###
+
 # Ignore composer files.
 /vendor/
 
@@ -9,15 +13,15 @@
 # Ignore the wp-content directory
 web/wp-content/*
 
-# Ignore mu-plugins
+# Ignore mu-plugins (but don't ignore the directory itself).
 !web/wp-content/mu-plugins/
 web/wp-content/mu-plugins/*
 
-# Ignore plugins
+# Ignore plugins (but don't ignore the directory itself).
 !web/wp-content/plugins/
 web/wp-content/plugins/*
 
-# Ignore themes
+# Ignore themes (but don't ignore the directory itself).
 !web/wp-content/themes/
 web/wp-content/themes/*
 
@@ -27,7 +31,7 @@ web/wp
 # Don't ignore WP configuration
 !web/wp-content/config/
 
-# Ignore private stuff
+# Ignore private stuff (but don't ignore the directory itself).
 !web/private/
 web/private/*
 !web/private/scripts/
