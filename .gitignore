@@ -37,3 +37,59 @@ web/private/*
 !web/private/scripts/
 web/private/scripts/quicksilver
 !web/private/config/
+
+# :::::::::::::::::::::: cut ::::::::::::::::::::::
+
+###
+### Pantheon site .gitignore section
+###
+### Items below the "cut" line are still ignored on the Pantheon site. Items
+### above the "cut" line are ignored in the GitHub repository, but committed
+### to the Pantheon repository.
+###
+
+# WordPress #
+############
+web/wp-config-local.php
+web/wp-cli.local.yml
+web/sitemap.xml
+web/sitemap.xml.gz
+
+# Avoid accidental modification of pantheon.upstream.yml in sites created from
+# this upstream
+pantheon.upstream.yml
+
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.bz2
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.tgz
+
+# Logs and databases #
+######################
+*.log
+*.sql
+
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+._*
+
+# Vim generated files #
+######################
+*.un~
+
+# SASS #
+##########
+.sass-cache
