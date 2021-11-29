@@ -54,6 +54,14 @@
             "web/private/scripts/quicksilver/{$name}/": ["type:quicksilver-script"]
         }
     },
+    "autoload": {
+        "classmap": [
+            "scripts/composer/ScriptHandler.php"
+        ],
+        "psr-4": {
+            "PantheonSystems\\WordHatHelpers\\": "tests/behat/helper_classes/"
+        }
+    },
     "scripts": {
         "build-assets": [
             "@prepare-for-pantheon",
