@@ -6,6 +6,8 @@ set -ex
 # Copy the mu-plugins loader file.
 rsync vendor/pantheon-systems/pantheon-wp-loader/loader.php web/wp-content/mu-plugins/
 
+rsync vendor/pantheon-systems/wordpress-integrations/pantheon.upstream.yml web/wp/
+
 # Copy over the mu-plugins folder from core wp, if it exists.
 if [ -d "web/wp/wp-content/mu-plugins/" ]; then
   rsync -r web/wp/wp-content/mu-plugins/* web/wp-content/mu-plugins/
