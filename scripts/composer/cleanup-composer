@@ -35,7 +35,25 @@ function copy_files() {
   if [ -d "web/wp/wp-content/mu-plugins/" ]; then
     echo "📂 💨  ${yellow}Copying mu-plugins...${normal}"
     rsync -rvv web/wp/wp-content/mu-plugins/* web/wp-content/mu-plugins/
-    echo "✅ ${green}Done!"
+    echo "✅ ${green}Done!${normal}"
+  fi
+
+  if [ ! -f "web/wp-config.php" ]; then
+    echo "📂 💨  ${yellow}Copying wp-config.php...${normal}"
+    rsync -vv vendor/pantheon-systems/pantheon-wp-config/wp-config.php web/
+    echo "✅ ${green}Done!${normal}"
+  fi
+
+  if [ ! -f "web/index.php" ]; then
+    echo "📂 💨  ${yellow}Copying default index file...${normal}"
+    rsync -vv vendor/pantheon-systems/wordpress-integrations/index.php web/
+    echo "✅ ${green}Done!${normal}"
+  fi
+
+  if [ ! -f "web/wp-cli.yml" ]; then
+    echo "📂 💨  ${yellow}Copying WP-CLI configuration file...${normal}"
+    rsync -vv vendor/pantheon-systems/wordpress-integrations/wp-cli.yml web/
+    echo "✅ ${green}Done!${normal}"
   fi
 }
 
