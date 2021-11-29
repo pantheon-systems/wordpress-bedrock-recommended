@@ -39,6 +39,11 @@ web/private/*
 web/private/scripts/quicksilver
 !web/private/config/
 
+# Ignore files copied by scripts.
+web/index.php
+web/wp-cli.yml
+web/wp-config.php
+
 # :::::::::::::::::::::: cut ::::::::::::::::::::::
 
 ###
