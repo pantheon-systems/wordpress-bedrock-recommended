@@ -1,0 +1,161 @@
+# Build tools Dockerfile
+image: quay.io/pantheon-public/build-tools-ci:6.x
+
+# Default Variables
+variables:
+  CI_BUILD_NUMBER: $CI_PIPELINE_IID
+  DEFAULT_SITE: $CI_PROJECT_NAME
+  PR_NUMBER: $CI_MERGE_REQUEST_IID
+  CI_BRANCH: $CI_COMMIT_REF_NAME
+
+# Cache libraries in between jobs
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+  - vendor/
+  - /composer/cache
+  - $HOME/.composer/cache
+
+stages:
+- configure-and-build
+- deploy
+- visual-test
+- behat-test
+- cleanup
+- updates
+
+before_script:
+- export PATH="$PATH:$CI_PROJECT_DIR/.ci/scripts"
+- export BASH_ENV="$HOME/.envvarsrc"
+- /build-tools-ci/scripts/set-environment
+- source $BASH_ENV
+# See https://docs.gitlab.com/ee/ci/ssh_keys/README.html
+- eval $(ssh-agent -s) && ssh-add <(echo "$SSH_PRIVATE_KEY")
+- terminus -n auth:login --machine-token="$TERMINUS_TOKEN"
+
+configure:env-vars:
+  stage: configure-and-build
+  before_script:
+  # See https://docs.gitlab.com/ee/ci/ssh_keys/README.html
+  - eval $(ssh-agent -s) && ssh-add <(echo "$SSH_PRIVATE_KEY")
+  script:
+  # Set TERMINUS_ENV and related environment variables.
+  # https://github.com/pantheon-systems/docker-build-tools-ci/blob/6.x/scripts/set-environment
+  - export PATH="$PATH:$CI_PROJECT_DIR/.ci/scripts"
+  - export BASH_ENV="$HOME/.envvarsrc"
+  - /build-tools-ci/scripts/set-environment
+  - source $BASH_ENV
+  - cp $BASH_ENV bash_env.txt
+  artifacts:
+    paths:
+      - bash_env.txt
+  only:
+  - merge_requests
+  - master
+
+test:static:
+  stage: configure-and-build
+  script:
+  - ./.ci/test/static/run
+  only:
+  - merge_requests
+  - master
+  except:
+  - schedules
+
+build:php:
+  stage: configure-and-build
+  script:
+  - ./.ci/build/php
+  artifacts:
+    paths:
+      - web
+      - vendor
+  only:
+  - merge_requests
+  - master
+  except:
+  - schedules
+
+deploy:pantheon:
+  stage: deploy
+  environment:
+    name: deploy/$TERMINUS_ENV
+    url: https://$TERMINUS_ENV-$TERMINUS_SITE.pantheonsite.io/
+  script:
+  - echo "Target site.env is $TERMINUS_SITE.$TERMINUS_ENV"
+  - ./.ci/deploy/pantheon/dev-multidev
+  dependencies:
+  - build:php
+  only:
+  - merge_requests
+  - master
+  except:
+  - schedules
+
+test:visual-regression:
+  stage: visual-test
+  image: 
+    name: backstopjs/backstopjs:4.1.9
+    entrypoint: [""]
+  variables:
+    CI_BUILD_URL: $CI_PIPELINE_IID
+    CI_REPOSITORY_URL: $CI_MERGE_REQUEST_IID
+    ARTIFACTS_DIR_URL: https://gitlab.com/api/v4/projects/$CI_PROJECT_ID/jobs/$CI_JOB_ID/artifacts
+  before_script:
+  # See https://docs.gitlab.com/ee/ci/ssh_keys/README.html
+  - eval $(ssh-agent -s) && ssh-add <(echo "$SSH_PRIVATE_KEY")
+  - export BASH_ENV="$HOME/.envvarsrc"
+  - cp bash_env.txt $BASH_ENV
+  - source $BASH_ENV
+  script:
+  - ./.ci/test/visual-regression/run
+  artifacts:
+    paths:
+      - backstop_data
+  dependencies:
+    - configure:env-vars
+    - deploy:pantheon
+  only:
+  - merge_requests
+  except:
+  - schedules
+
+test:behat:
+  stage: behat-test
+  script:
+  - ./.ci/test/behat/initialize
+  # Start headless Chrome
+  - google-chrome --disable-gpu --headless --remote-debugging-address=0.0.0.0 --remote-debugging-port=9222 --no-sandbox </dev/null &>/dev/null &
+  - ./.ci/test/behat/run
+  artifacts:
+    paths:
+      - behat-screenshots
+  dependencies:
+    - deploy:pantheon
+    - test:visual-regression
+  only:
+  - merge_requests
+  - master
+  except:
+  - schedules
+
+test:behat:cleanup:
+  stage: cleanup
+  when: always
+  script:
+  - ./.ci/test/behat/cleanup
+  only:
+  - merge_requests
+  - master
+  except:
+  - schedules
+  dependencies:
+  - test:behat
+
+schedule:composer:update:
+  stage: updates
+  script:
+  - set -e && terminus project:clu $TERMINUS_SITE
+  only:
+  - schedules
