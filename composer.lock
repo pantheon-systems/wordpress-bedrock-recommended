@@ -158,97 +158,28 @@
             "time": "2021-09-13T08:19:44+00:00"
         },
         {
-            "name": "graham-campbell/result-type",
-            "version": "v1.0.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/GrahamCampbell/Result-Type.git",
-                "reference": "0690bde05318336c7221785f2a932467f98b64ca"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Result-Type/zipball/0690bde05318336c7221785f2a932467f98b64ca",
-                "reference": "0690bde05318336c7221785f2a932467f98b64ca",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.0 || ^8.0",
-                "phpoption/phpoption": "^1.8"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^6.5.14 || ^7.5.20 || ^8.5.19 || ^9.5.8"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "GrahamCampbell\\ResultType\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Graham Campbell",
-                    "email": "hello@gjcampbell.co.uk",
-                    "homepage": "https://github.com/GrahamCampbell"
-                }
-            ],
-            "description": "An Implementation Of The Result Type",
-            "keywords": [
-                "Graham Campbell",
-                "GrahamCampbell",
-                "Result Type",
-                "Result-Type",
-                "result"
-            ],
-            "support": {
-                "issues": "https://github.com/GrahamCampbell/Result-Type/issues",
-                "source": "https://github.com/GrahamCampbell/Result-Type/tree/v1.0.4"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/GrahamCampbell",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/graham-campbell/result-type",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2021-11-21T21:41:47+00:00"
-        },
-        {
             "name": "oscarotero/env",
-            "version": "v2.1.0",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/oscarotero/env.git",
-                "reference": "0da22cadc6924155fa9bbea2cdda2e84ab7cbdd3"
+                "reference": "4ab45ce5c1f2c62549208426bfa20a3d5fa008c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/oscarotero/env/zipball/0da22cadc6924155fa9bbea2cdda2e84ab7cbdd3",
-                "reference": "0da22cadc6924155fa9bbea2cdda2e84ab7cbdd3",
+                "url": "https://api.github.com/repos/oscarotero/env/zipball/4ab45ce5c1f2c62549208426bfa20a3d5fa008c6",
+                "reference": "4ab45ce5c1f2c62549208426bfa20a3d5fa008c6",
                 "shasum": ""
             },
             "require": {
                 "ext-ctype": "*",
-                "php": ">=7.1"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.16",
-                "phpunit/phpunit": "^7.0"
+                "php": ">=5.2"
             },
             "type": "library",
             "autoload": {
-                "psr-4": {
-                    "Env\\": "src/"
-                },
-                "files": [
-                    "src/env_function.php"
-                ]
+                "psr-0": {
+                    "Env": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -270,9 +201,9 @@
             "support": {
                 "email": "oom@oscarotero.com",
                 "issues": "https://github.com/oscarotero/env/issues",
-                "source": "https://github.com/oscarotero/env/tree/v2.1.0"
+                "source": "https://github.com/oscarotero/env/tree/v1.2.0"
             },
-            "time": "2020-06-11T10:59:27+00:00"
+            "time": "2019-04-03T18:28:43+00:00"
         },
         {
             "name": "pantheon-systems/pantheon-wp-config",
@@ -280,7 +211,10 @@
             "dist": {
                 "type": "path",
                 "url": "packages/pantheon-wp-config",
-                "reference": "06c01bc5fbc1ec26e2c6e42d3602aeb5987b9643"
+                "reference": "becd5081d813a9a98384cd89338dc6f91cfb0236"
+            },
+            "require": {
+                "vlucas/phpdotenv": "^3.1.0"
             },
             "type": "project",
             "license": [
@@ -360,12 +294,32 @@
             "dist": {
                 "type": "path",
                 "url": "packages/wordpress-integrations",
-                "reference": "b48246e9bcb5853018375ec1e79b2c652d9d8058"
+                "reference": "a31405d1ac5d2366f31b09a8fca6c591be3ebed7"
             },
             "require": {
                 "pantheon-systems/pantheon-wp-config": "*",
                 "pantheon-systems/pantheon-wp-loader": "*",
-                "pantheon-systems/pantheon-wp-muplugin": "*"
+                "pantheon-systems/pantheon-wp-muplugin": "*",
+                "pantheon-systems/quicksilver-pushback": "^2",
+                "roots/bedrock": "*",
+                "roots/wp-password-bcrypt": "^1.0.0",
+                "wp-coding-standards/wpcs": "^1.2.1",
+                "wpackagist-plugin/lh-hsts": "^1.25",
+                "wpackagist-plugin/pantheon-advanced-page-cache": ">=0.3.0",
+                "wpackagist-plugin/wp-native-php-sessions": ">=0.6.9",
+                "wpackagist-theme/twentynineteen": "^2.1"
+            },
+            "require-dev": {
+                "behat/mink-goutte-driver": "^1.2.1",
+                "brain/monkey": "^2.2.0",
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
+                "dmore/behat-chrome-extension": "^1.2",
+                "genesis/behat-fail-aid": "^2.1",
+                "paulgibbs/behat-wordpress-extension": "^3.3.0",
+                "phpunit/phpunit": "^7.5.1",
+                "roave/security-advisories": "dev-master",
+                "squizlabs/php_codesniffer": "^3.4.0",
+                "wp-coding-standards/wpcs": "^1.2.1"
             },
             "type": "project",
             "license": [
@@ -382,17 +336,7 @@
             "dist": {
                 "type": "path",
                 "url": "upstream-configuration",
-                "reference": "e81b68d5eb0d93c194f6adbba8b11f59e4cd3854"
-            },
-            "require": {
-                "pantheon-systems/quicksilver-pushback": "^2",
-                "roots/bedrock": "*",
-                "roots/wp-password-bcrypt": "^1.0.0",
-                "wp-coding-standards/wpcs": "^1.2.1",
-                "wpackagist-plugin/lh-hsts": "^1.25",
-                "wpackagist-plugin/pantheon-advanced-page-cache": ">=0.3.0",
-                "wpackagist-plugin/wp-native-php-sessions": ">=0.6.9",
-                "wpackagist-theme/twentynineteen": "^2.1"
+                "reference": "5bdb496dc4226129c61f5ed25242d531d64a2ef1"
             },
             "type": "project",
             "license": [
@@ -473,32 +417,30 @@
         },
         {
             "name": "roots/bedrock",
-            "version": "1.17.1",
+            "version": "1.12.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/bedrock.git",
-                "reference": "5f37b02779c162e96221d2029eaeb9762c004795"
+                "reference": "7b784d2c41acb5be41efcfaf328d576e5ee2afc6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roots/bedrock/zipball/5f37b02779c162e96221d2029eaeb9762c004795",
-                "reference": "5f37b02779c162e96221d2029eaeb9762c004795",
+                "url": "https://api.github.com/repos/roots/bedrock/zipball/7b784d2c41acb5be41efcfaf328d576e5ee2afc6",
+                "reference": "7b784d2c41acb5be41efcfaf328d576e5ee2afc6",
                 "shasum": ""
             },
             "require": {
-                "composer/installers": "^1.12",
-                "oscarotero/env": "^2.1",
+                "composer/installers": "^1.7",
+                "oscarotero/env": "^1.2.0",
                 "php": ">=7.1",
-                "roots/bedrock-autoloader": "^1.0",
-                "roots/bedrock-disallow-indexing": "^2.0",
-                "roots/wordpress": "5.8.2",
+                "roots/wordpress": "5.2.3",
                 "roots/wp-config": "1.0.0",
-                "roots/wp-password-bcrypt": "1.1.0",
-                "vlucas/phpdotenv": "^5.3"
+                "roots/wp-password-bcrypt": "1.0.0",
+                "vlucas/phpdotenv": "^3.4.0"
             },
             "require-dev": {
-                "roave/security-advisories": "dev-latest",
-                "squizlabs/php_codesniffer": "^3.6.0"
+                "roave/security-advisories": "dev-master",
+                "squizlabs/php_codesniffer": "^3.4.2"
             },
             "type": "project",
             "extra": {
@@ -544,172 +486,25 @@
             "support": {
                 "forum": "https://discourse.roots.io/category/bedrock",
                 "issues": "https://github.com/roots/bedrock/issues",
-                "source": "https://github.com/roots/bedrock/tree/1.17.1"
+                "source": "https://github.com/roots/bedrock/tree/master"
             },
-            "funding": [
-                {
-                    "url": "https://github.com/roots",
-                    "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/rootsdev",
-                    "type": "patreon"
-                }
-            ],
-            "time": "2021-11-17T00:18:18+00:00"
-        },
-        {
-            "name": "roots/bedrock-autoloader",
-            "version": "1.0.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/roots/bedrock-autoloader.git",
-                "reference": "f508348a3365ab5ce7e045f5fd4ee9f0a30dd70f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/roots/bedrock-autoloader/zipball/f508348a3365ab5ce7e045f5fd4ee9f0a30dd70f",
-                "reference": "f508348a3365ab5ce7e045f5fd4ee9f0a30dd70f",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1"
-            },
-            "require-dev": {
-                "10up/wp_mock": "^0.4.2",
-                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Roots\\Bedrock\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nick Fox",
-                    "email": "nick@foxaii.com",
-                    "homepage": "https://github.com/foxaii"
-                },
-                {
-                    "name": "Scott Walkinshaw",
-                    "email": "scott.walkinshaw@gmail.com",
-                    "homepage": "https://github.com/swalkinshaw"
-                },
-                {
-                    "name": "Austin Pray",
-                    "email": "austin@austinpray.com",
-                    "homepage": "https://github.com/austinpray"
-                }
-            ],
-            "description": "An autoloader that enables standard plugins to be required just like must-use plugins",
-            "keywords": [
-                "autoloader",
-                "bedrock",
-                "mu-plugin",
-                "must-use",
-                "plugin",
-                "wordpress"
-            ],
-            "support": {
-                "forum": "https://discourse.roots.io/",
-                "issues": "https://github.com/roots/bedrock-autoloader/issues",
-                "source": "https://github.com/roots/bedrock-autoloader/tree/1.0.4"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/roots",
-                    "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/rootsdev",
-                    "type": "patreon"
-                }
-            ],
-            "time": "2020-12-04T15:59:12+00:00"
-        },
-        {
-            "name": "roots/bedrock-disallow-indexing",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/roots/bedrock-disallow-indexing.git",
-                "reference": "6c28192e17cb9e02a5c0c99691a18552b85e1615"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/roots/bedrock-disallow-indexing/zipball/6c28192e17cb9e02a5c0c99691a18552b85e1615",
-                "reference": "6c28192e17cb9e02a5c0c99691a18552b85e1615",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1"
-            },
-            "type": "wordpress-muplugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ben Word",
-                    "email": "ben@benword.com",
-                    "homepage": "https://github.com/retlehs"
-                },
-                {
-                    "name": "Scott Walkinshaw",
-                    "email": "scott.walkinshaw@gmail.com",
-                    "homepage": "https://github.com/swalkinshaw"
-                },
-                {
-                    "name": "QWp6t",
-                    "email": "hi@qwp6t.me",
-                    "homepage": "https://github.com/qwp6t"
-                }
-            ],
-            "description": "Disallow indexing of your site on non-production environments",
-            "keywords": [
-                "wordpress"
-            ],
-            "support": {
-                "forum": "https://discourse.roots.io/",
-                "issues": "https://github.com/roots/bedrock-disallow-indexing/issues",
-                "source": "https://github.com/roots/bedrock-disallow-indexing/tree/2.0.0"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/roots",
-                    "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/rootsdev",
-                    "type": "patreon"
-                }
-            ],
-            "time": "2020-05-20T01:25:07+00:00"
+            "time": "2019-09-05T19:44:15+00:00"
         },
         {
             "name": "roots/wordpress",
-            "version": "5.8.2",
+            "version": "5.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress.git",
-                "reference": "5.8.2"
+                "reference": "5.2.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/refs/tags/5.8.2"
+                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.2.3"
             },
             "require": {
                 "php": ">=5.3.2",
                 "roots/wordpress-core-installer": ">=1.0.0"
-            },
-            "provide": {
-                "wordpress/core-implementation": "5.8.2"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -738,17 +533,7 @@
                 "source": "https://core.trac.wordpress.org/browser",
                 "wiki": "https://codex.wordpress.org/"
             },
-            "funding": [
-                {
-                    "url": "https://github.com/roots",
-                    "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/rootsdev",
-                    "type": "patreon"
-                }
-            ],
-            "time": "2021-11-10T23:24:02+00:00"
+            "time": "2019-09-04T22:41:56+00:00"
         },
         {
             "name": "roots/wordpress-core-installer",
@@ -869,28 +654,27 @@
         },
         {
             "name": "roots/wp-password-bcrypt",
-            "version": "1.1.0",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/wp-password-bcrypt.git",
-                "reference": "15f0d8919fb3731f79a0cf2fb47e1baecb86cb26"
+                "reference": "5cecd2e98ccc3193443cc5c5db9b3bc7abed5ffa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roots/wp-password-bcrypt/zipball/15f0d8919fb3731f79a0cf2fb47e1baecb86cb26",
-                "reference": "15f0d8919fb3731f79a0cf2fb47e1baecb86cb26",
+                "url": "https://api.github.com/repos/roots/wp-password-bcrypt/zipball/5cecd2e98ccc3193443cc5c5db9b3bc7abed5ffa",
+                "reference": "5cecd2e98ccc3193443cc5c5db9b3bc7abed5ffa",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6.0"
+                "composer/installers": "~1.0",
+                "php": ">=5.5.0"
             },
             "require-dev": {
-                "brain/monkey": "^2.6",
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
-                "mockery/mockery": "^1.4",
-                "phpcompatibility/php-compatibility": "^9.3",
-                "phpunit/phpunit": "<= 9.3",
-                "squizlabs/php_codesniffer": "^3.5"
+                "brain/monkey": "^1.3.1",
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "^4.8.23|^5.2.9",
+                "squizlabs/php_codesniffer": "^2.5.1"
             },
             "type": "library",
             "autoload": {
@@ -909,12 +693,8 @@
                     "homepage": "https://github.com/swalkinshaw"
                 },
                 {
-                    "name": "QWp6t",
+                    "name": "qwp6t",
                     "homepage": "https://github.com/qwp6t"
-                },
-                {
-                    "name": "Brandon Nifong",
-                    "homepage": "https://github.com/log1x"
                 },
                 {
                     "name": "Jan Pingel",
@@ -925,26 +705,14 @@
             "description": "WordPress plugin which replaces wp_hash_password and wp_check_password's phpass hasher with PHP 5.5's password_hash and password_verify using bcrypt.",
             "homepage": "https://roots.io/plugins/wp-password-bcrypt",
             "keywords": [
-                "bcrypt",
-                "passwords",
-                "wordpress"
+                "wordpress wp bcrypt password"
             ],
             "support": {
                 "forum": "https://discourse.roots.io/",
                 "issues": "https://github.com/roots/wp-password-bcrypt/issues",
-                "source": "https://github.com/roots/wp-password-bcrypt/tree/1.1.0"
+                "source": "https://github.com/roots/wp-password-bcrypt/tree/master"
             },
-            "funding": [
-                {
-                    "url": "https://github.com/roots",
-                    "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/rootsdev",
-                    "type": "patreon"
-                }
-            ],
-            "time": "2021-10-31T01:18:58+00:00"
+            "time": "2016-03-01T16:27:06+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
@@ -1082,203 +850,37 @@
             "time": "2021-02-19T12:13:01+00:00"
         },
         {
-            "name": "symfony/polyfill-mbstring",
-            "version": "v1.23.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "9174a3d80210dca8daa7f31fec659150bbeabfc6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/9174a3d80210dca8daa7f31fec659150bbeabfc6",
-                "reference": "9174a3d80210dca8daa7f31fec659150bbeabfc6",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1"
-            },
-            "suggest": {
-                "ext-mbstring": "For best performance"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-main": "1.23-dev"
-                },
-                "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Mbstring\\": ""
-                },
-                "files": [
-                    "bootstrap.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Grekas",
-                    "email": "p@tchwork.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony polyfill for the Mbstring extension",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "compatibility",
-                "mbstring",
-                "polyfill",
-                "portable",
-                "shim"
-            ],
-            "support": {
-                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.23.1"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2021-05-27T12:26:48+00:00"
-        },
-        {
-            "name": "symfony/polyfill-php80",
-            "version": "v1.23.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-php80.git",
-                "reference": "1100343ed1a92e3a38f9ae122fc0eb21602547be"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/1100343ed1a92e3a38f9ae122fc0eb21602547be",
-                "reference": "1100343ed1a92e3a38f9ae122fc0eb21602547be",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-main": "1.23-dev"
-                },
-                "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Php80\\": ""
-                },
-                "files": [
-                    "bootstrap.php"
-                ],
-                "classmap": [
-                    "Resources/stubs"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ion Bazan",
-                    "email": "ion.bazan@gmail.com"
-                },
-                {
-                    "name": "Nicolas Grekas",
-                    "email": "p@tchwork.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony polyfill backporting some PHP 8.0+ features to lower PHP versions",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "compatibility",
-                "polyfill",
-                "portable",
-                "shim"
-            ],
-            "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/v1.23.1"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2021-07-28T13:41:28+00:00"
-        },
-        {
             "name": "vlucas/phpdotenv",
-            "version": "v5.4.0",
+            "version": "v3.6.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "d4394d044ed69a8f244f3445bcedf8a0d7fe2403"
+                "reference": "a1bf4c9853d90ade427b4efe35355fc41b3d6988"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/d4394d044ed69a8f244f3445bcedf8a0d7fe2403",
-                "reference": "d4394d044ed69a8f244f3445bcedf8a0d7fe2403",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/a1bf4c9853d90ade427b4efe35355fc41b3d6988",
+                "reference": "a1bf4c9853d90ade427b4efe35355fc41b3d6988",
                 "shasum": ""
             },
             "require": {
-                "ext-pcre": "*",
-                "graham-campbell/result-type": "^1.0.2",
-                "php": "^7.1.3 || ^8.0",
-                "phpoption/phpoption": "^1.8",
-                "symfony/polyfill-ctype": "^1.23",
-                "symfony/polyfill-mbstring": "^1.23.1",
-                "symfony/polyfill-php80": "^1.23.1"
+                "php": "^5.4 || ^7.0 || ^8.0",
+                "phpoption/phpoption": "^1.5.2",
+                "symfony/polyfill-ctype": "^1.17"
             },
             "require-dev": {
-                "bamarni/composer-bin-plugin": "^1.4.1",
                 "ext-filter": "*",
-                "phpunit/phpunit": "^7.5.20 || ^8.5.21 || ^9.5.10"
+                "ext-pcre": "*",
+                "phpunit/phpunit": "^4.8.36 || ^5.7.27 || ^6.5.14 || ^7.5.20 || ^8.5.21"
             },
             "suggest": {
-                "ext-filter": "Required to use the boolean validator."
+                "ext-filter": "Required to use the boolean validator.",
+                "ext-pcre": "Required to use most of the library."
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.4-dev"
+                    "dev-master": "3.6-dev"
                 }
             },
             "autoload": {
@@ -1308,7 +910,7 @@
             ],
             "support": {
                 "issues": "https://github.com/vlucas/phpdotenv/issues",
-                "source": "https://github.com/vlucas/phpdotenv/tree/v5.4.0"
+                "source": "https://github.com/vlucas/phpdotenv/tree/v3.6.9"
             },
             "funding": [
                 {
@@ -1320,7 +922,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-11-10T01:08:39+00:00"
+            "time": "2021-10-02T19:07:56+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
