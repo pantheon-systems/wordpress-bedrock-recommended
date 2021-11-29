@@ -16,22 +16,45 @@ blue=$(tput setaf 4)
 magenta=$(tput setaf 5)
 cyan=$(tput setaf 6)
 black=$(tput setaf 7)
-# Copy the mu-plugins loader file.
-rsync vendor/pantheon-systems/pantheon-wp-loader/loader.php web/wp-content/mu-plugins/
 
-rsync vendor/pantheon-systems/wordpress-integrations/pantheon.upstream.yml web/wp/
+function copy_files() {
+  # Copy the mu-plugins loader file.
+  if [ ! -f "web/wp-content/mu-plugins/loader.php" ]; then
+    echo "📂 💨  ${yellow}Copying the mu-plugins loader file...${normal}"
+    rsync -vv vendor/pantheon-systems/pantheon-wp-loader/loader.php web/wp-content/mu-plugins/
+    echo "${green}Done!${normal}"
+  fi
 
-# Copy over the mu-plugins folder from core wp, if it exists.
-if [ -d "web/wp/wp-content/mu-plugins/" ]; then
-  rsync -r web/wp/wp-content/mu-plugins/* web/wp-content/mu-plugins/
-fi
+  # Copy the Pantheon upstream config file.
+  if [ ! -f "web/wp/pantheon.upstream.yml" ]; then
+    echo "📂 💨  ${yellow}Copying the Pantheon upstream config file...${normal}"
+    rsync -vv vendor/pantheon-systems/wordpress-integrations/pantheon.upstream.yml web/wp/
+    echo "${green}Done!${normal}"
+  fi
 
-# Delete the core wp-config file, if it exists.
-if [ -f "web/wp/wp-config.php" ]; then
-  rm web/wp/wp-config.php
-fi
+  # Copy over the mu-plugins folder from core wp, if it exists.
+  if [ -d "web/wp/wp-content/mu-plugins/" ]; then
+    echo "📂 💨  ${yellow}Copying mu-plugins...${normal}"
+    rsync -rvv web/wp/wp-content/mu-plugins/* web/wp-content/mu-plugins/
+    echo "${green}Done!"
+  fi
+}
 
-# Remove the wp-content directory from core WordPress.
-if [ -d "web/wp/wp-content" ]; then
-  rm -rf web/wp/wp-content
-fi
+function remove_files() {
+  # Delete the core wp-config file, if it exists.
+  if [ -f "web/wp/wp-config.php" ]; then
+    echo "🗑 💥 ${yellow}Removing unused wp-config.php file from Bedrock install...${normal}"
+    rm -v web/wp/wp-config.php
+    echo "${green}Done!${normal}"
+  fi
+
+  # Remove the wp-content directory from core WordPress.
+  if [ -d "web/wp/wp-content" ]; then
+    echo "🗑 💥 ${yellow}Removing unused wp-content directory from Bedrock install...${normal}"
+    rm -rfv web/wp/wp-content
+    echo "${green}Done!${normal}"
+  fi
+}
+
+copy_files
+remove_files
