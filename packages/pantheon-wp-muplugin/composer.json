@@ -1,0 +1,8 @@
+{
+    "name": "pantheon-systems/pantheon-wp-muplugin",
+    "description": "Advanced functions to integrate with the Pantheon platform.",
+    "type": "wordpress-muplugin",
+    "license": "MIT",
+    "version": "1.0.0",
+	"require": {}
+}

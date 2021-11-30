@@ -1,0 +1,8 @@
+{
+    "name": "pantheon-systems/pantheon-wp-loader",
+    "description": "A mu-plugin loader for WordPress sites hosted on Pantheon.",
+    "type": "project",
+    "license": "MIT",
+    "version": "1.0.0",
+	"require": {}
+}
