@@ -8,7 +8,7 @@
 # Ignore /packages/ folder for local development.
 # This allows for any of the packages stored here locally to be Git
 # repositories themselves which will override the default repository locations.
-/packages/
+#/packages/
 !/packages/upstream-configuration/
 
 # Ignore the wp-content directory
