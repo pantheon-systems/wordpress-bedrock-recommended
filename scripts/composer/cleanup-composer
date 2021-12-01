@@ -3,73 +3,60 @@
 # Exit immediately on errors, and echo commands as they are executed.
 set -e
 
-#
-# Defines some global variables for colors.
-# Forked from https://github.com/colorful-tones/newsite/
-#
-normal=$(tput sgr0)
-bold=$(tput bold)
-red=$(tput setaf 1)
-green=$(tput setaf 2)
-yellow=$(tput setaf 3)
-blue=$(tput setaf 4)
-magenta=$(tput setaf 5)
-cyan=$(tput setaf 6)
-
 function copy_files() {
   # Copy the mu-plugins loader file.
   if [ ! -f "web/wp-content/mu-plugins/loader.php" ]; then
-    echo "📂 💨  ${yellow}Copying the mu-plugins loader file...${normal}"
+    echo "📂 💨  Copying the mu-plugins loader file..."
     rsync -vv vendor/pantheon-systems/pantheon-wp-loader/loader.php web/wp-content/mu-plugins/
-    echo "✅ ${green}Done!${normal}"
+    echo "✅ Done!"
   fi
 
   # Copy the Pantheon upstream config file.
   if [ ! -f "web/wp/pantheon.upstream.yml" ]; then
-    echo "📂 💨  ${yellow}Copying the Pantheon upstream config file...${normal}"
+    echo "📂 💨  Copying the Pantheon upstream config file..."
     rsync -vv vendor/pantheon-systems/wordpress-integrations/pantheon.upstream.yml web/wp/
-    echo "✅ ${green}Done!${normal}"
+    echo "✅ Done!"
   fi
 
   # Copy over the mu-plugins folder from core wp, if it exists.
   if [ -d "web/wp/wp-content/mu-plugins/" ]; then
-    echo "📂 💨  ${yellow}Copying mu-plugins...${normal}"
+    echo "📂 💨  Copying mu-plugins..."
     rsync -rvv web/wp/wp-content/mu-plugins/* web/wp-content/mu-plugins/
-    echo "✅ ${green}Done!${normal}"
+    echo "✅ Done!"
   fi
 
   if [ ! -f "web/wp-config.php" ]; then
-    echo "📂 💨  ${yellow}Copying wp-config.php...${normal}"
+    echo "📂 💨  Copying wp-config.php..."
     rsync -vv vendor/pantheon-systems/pantheon-wp-config/wp-config.php web/
-    echo "✅ ${green}Done!${normal}"
+    echo "✅ Done!"
   fi
 
   if [ ! -f "web/index.php" ]; then
-    echo "📂 💨  ${yellow}Copying default index file...${normal}"
+    echo "📂 💨  Copying default index file..."
     rsync -vv vendor/pantheon-systems/wordpress-integrations/index.php web/
-    echo "✅ ${green}Done!${normal}"
+    echo "✅ Done!"
   fi
 
   if [ ! -f "web/wp-cli.yml" ]; then
-    echo "📂 💨  ${yellow}Copying WP-CLI configuration file...${normal}"
+    echo "📂 💨  Copying WP-CLI configuration file..."
     rsync -vv vendor/pantheon-systems/wordpress-integrations/wp-cli.yml web/
-    echo "✅ ${green}Done!${normal}"
+    echo "✅ Done!"
   fi
 }
 
 function remove_files() {
   # Delete the core wp-config file, if it exists.
   if [ -f "web/wp/wp-config.php" ]; then
-    echo "🗑 💥 ${yellow}Removing unused wp-config.php file from Bedrock install...${normal}"
+    echo "🗑 💥 Removing unused wp-config.php file from Bedrock install..."
     rm -v web/wp/wp-config.php
-    echo "✅ ${green}Done!${normal}"
+    echo "✅ Done!"
   fi
 
   # Remove the wp-content directory from core WordPress.
   if [ -d "web/wp/wp-content" ]; then
-    echo "🗑 💥 ${yellow}Removing unused wp-content directory from Bedrock install...${normal}"
+    echo "🗑 💥 Removing unused wp-content directory from Bedrock install..."
     rm -rfv web/wp/wp-content
-    echo "✅ ${green}Done!${normal}"
+    echo "✅ Done!"
   fi
 }
 
