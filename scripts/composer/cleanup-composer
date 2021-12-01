@@ -4,8 +4,6 @@
 set -e
 
 function copy_files() {
-  # Let's just for fun add a pwd command to see where we are...
-  ls vendor/pantheon-systems
   # Copy the mu-plugins loader file.
   if [ ! -f "web/wp-content/mu-plugins/loader.php" ]; then
     echo "📂 💨  Copying the mu-plugins loader file..."
