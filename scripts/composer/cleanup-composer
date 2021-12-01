@@ -5,19 +5,18 @@ set -e
 
 function copy_files() {
   # Let's just for fun add a pwd command to see where we are...
-  pwd
-  ls vendor | grep pantheon
+  ls vendor/pantheon-systems
   # Copy the mu-plugins loader file.
   if [ ! -f "web/wp-content/mu-plugins/loader.php" ]; then
     echo "📂 💨  Copying the mu-plugins loader file..."
-    rsync -vv ./vendor/pantheon-systems/pantheon-wp-loader/loader.php web/wp-content/mu-plugins/
+    cp -v vendor/pantheon-systems/pantheon-wp-loader/loader.php web/wp-content/mu-plugins/
     echo "✅ Done!"
   fi
 
   # Copy the Pantheon upstream config file.
   if [ ! -f "web/wp/pantheon.upstream.yml" ]; then
     echo "📂 💨  Copying the Pantheon upstream config file..."
-    rsync -vv ./vendor/pantheon-systems/wordpress-integrations/pantheon.upstream.yml web/wp/
+    cp -v vendor/pantheon-systems/wordpress-integrations/pantheon.upstream.yml web/wp/
     echo "✅ Done!"
   fi
 
@@ -30,19 +29,19 @@ function copy_files() {
 
   if [ ! -f "web/wp-config.php" ]; then
     echo "📂 💨  Copying wp-config.php..."
-    rsync -vv ./vendor/pantheon-systems/pantheon-wp-config/wp-config.php web/
+    cp -v vendor/pantheon-systems/pantheon-wp-config/wp-config.php web/
     echo "✅ Done!"
   fi
 
   if [ ! -f "web/index.php" ]; then
     echo "📂 💨  Copying default index file..."
-    rsync -vv ./vendor/pantheon-systems/wordpress-integrations/index.php web/
+    cp -v vendor/pantheon-systems/wordpress-integrations/index.php web/
     echo "✅ Done!"
   fi
 
   if [ ! -f "web/wp-cli.yml" ]; then
     echo "📂 💨  Copying WP-CLI configuration file..."
-    rsync -vv ./vendor/pantheon-systems/wordpress-integrations/wp-cli.yml web/
+    cp -v vendor/pantheon-systems/wordpress-integrations/wp-cli.yml web/
     echo "✅ Done!"
   fi
 }
