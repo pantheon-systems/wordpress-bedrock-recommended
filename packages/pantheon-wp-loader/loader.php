@@ -22,7 +22,13 @@ $mu_plugins = [
 ];
 
 foreach ( $mu_plugins as $file ) {
-	include_once dirname( __FILE__ ) . '/' . $file;
+	$path = dirname( __FILE__ ) . '/' . $file;
+
+	if ( file_exists( $path ) ) {
+		include_once $path;
+	} else {
+		error_log( sprintf( 'Tried to load %s but the file was not found.' ) );
+	}
 }
 unset( $file );
 
