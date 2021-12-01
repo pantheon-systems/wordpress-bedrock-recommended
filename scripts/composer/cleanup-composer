@@ -7,39 +7,39 @@ function copy_files() {
   # Copy the mu-plugins loader file.
   if [ ! -f "web/wp-content/mu-plugins/loader.php" ]; then
     echo "📂 💨  Copying the mu-plugins loader file..."
-    rsync -vv vendor/pantheon-systems/pantheon-wp-loader/loader.php web/wp-content/mu-plugins/
+    rsync -vv ./vendor/pantheon-systems/pantheon-wp-loader/loader.php web/wp-content/mu-plugins/
     echo "✅ Done!"
   fi
 
   # Copy the Pantheon upstream config file.
   if [ ! -f "web/wp/pantheon.upstream.yml" ]; then
     echo "📂 💨  Copying the Pantheon upstream config file..."
-    rsync -vv vendor/pantheon-systems/wordpress-integrations/pantheon.upstream.yml web/wp/
+    rsync -vv ./vendor/pantheon-systems/wordpress-integrations/pantheon.upstream.yml web/wp/
     echo "✅ Done!"
   fi
 
   # Copy over the mu-plugins folder from core wp, if it exists.
   if [ -d "web/wp/wp-content/mu-plugins/" ]; then
     echo "📂 💨  Copying mu-plugins..."
-    rsync -rvv web/wp/wp-content/mu-plugins/* web/wp-content/mu-plugins/
+    rsync -rvv ./web/wp/wp-content/mu-plugins/* web/wp-content/mu-plugins/
     echo "✅ Done!"
   fi
 
   if [ ! -f "web/wp-config.php" ]; then
     echo "📂 💨  Copying wp-config.php..."
-    rsync -vv vendor/pantheon-systems/pantheon-wp-config/wp-config.php web/
+    rsync -vv ./vendor/pantheon-systems/pantheon-wp-config/wp-config.php web/
     echo "✅ Done!"
   fi
 
   if [ ! -f "web/index.php" ]; then
     echo "📂 💨  Copying default index file..."
-    rsync -vv vendor/pantheon-systems/wordpress-integrations/index.php web/
+    rsync -vv ./vendor/pantheon-systems/wordpress-integrations/index.php web/
     echo "✅ Done!"
   fi
 
   if [ ! -f "web/wp-cli.yml" ]; then
     echo "📂 💨  Copying WP-CLI configuration file..."
-    rsync -vv vendor/pantheon-systems/wordpress-integrations/wp-cli.yml web/
+    rsync -vv ./vendor/pantheon-systems/wordpress-integrations/wp-cli.yml web/
     echo "✅ Done!"
   fi
 }
@@ -48,14 +48,14 @@ function remove_files() {
   # Delete the core wp-config file, if it exists.
   if [ -f "web/wp/wp-config.php" ]; then
     echo "🗑 💥 Removing unused wp-config.php file from Bedrock install..."
-    rm -v web/wp/wp-config.php
+    rm -v ./web/wp/wp-config.php
     echo "✅ Done!"
   fi
 
   # Remove the wp-content directory from core WordPress.
   if [ -d "web/wp/wp-content" ]; then
     echo "🗑 💥 Removing unused wp-content directory from Bedrock install..."
-    rm -rfv web/wp/wp-content
+    rm -rfv ./web/wp/wp-content
     echo "✅ Done!"
   fi
 }
