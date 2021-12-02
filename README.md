@@ -1,8 +1,14 @@
 # Composer-enabled WordPress template
 
+[![Unsupported](https://img.shields.io/badge/pantheon-unsupported-yellow?logo=pantheon&color=FFDC28&style=for-the-badge)](https://github.com/topics/unsupported?q=org%3Apantheon-systems)
+
 This is Pantheon's recommended starting point for forking new [WordPress](https://wordpress.org) upstreams that work with the Platform's Integrated Composer build process. It ~is also~ is _intended to be_ the Platform's standard WordPress with Composer upstream.
 
 Unlike with other Pantheon upstreams, the WordPress core install, which you are unlikely to adjust while building sites, is not in the main branch of the repository. Instead, it is referenced as dependencies within [Roots/Bedrock](https://roots.io/bedrock/) that are installed by [Composer](https://getcomposer.org).
+
+## Unsupported software
+
+_This tool is an early stage, proof-of-concept and is not recommended for use on production sites._
 
 ## TODOs
 
