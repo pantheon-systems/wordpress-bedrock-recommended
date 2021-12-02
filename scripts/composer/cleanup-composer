@@ -63,15 +63,8 @@ function copy_bedrock_muplugins() {
     cp -v vendor/roots/bedrock/web/app/mu-plugins/bedrock-autoloader.php web/wp-content/mu-plugins/
   fi
 
-  echo "📂 💨  Copying Bedrock mu-plugins 2/3..."
-  if [ ! -f "web/wp-content/mu-plugins/disallow-indexing.php" ]; then
-    cp -v vendor/roots/bedrock/web/app/mu-plugins/disallow-indexing.php web/wp-content/mu-plugins/
-  fi
-
-  echo "📂 💨  Copying Bedrock mu-plugins 3/3..."
-  if [ ! -f "web/wp-content/mu-plugins/register-theme-directory.php" ]; then
-    cp -v vendor/roots/bedrock/web/app/mu-plugins/register-theme-directory.php web/wp-content/mu-plugins/
-  fi
+    echo "📂 💨  Copying Bedrock mu-plugins 2/3..."
+    if [ ! -f "web/wp-content/mu-plugins/register-theme-directory.php" ]; then
 
   echo "✅ Done!"
 }
