@@ -14,7 +14,7 @@ if ( isset( $_ENV['PANTHEON_ENVIRONMENT'] ) ) {
 
 	require_once 'inc/pantheon-page-cache.php';
 	if ( ! defined( 'DISABLE_PANTHEON_UPDATE_NOTICES' ) || ! DISABLE_PANTHEON_UPDATE_NOTICES ) {
-		require_once 'pantheon/pantheon-updates.php';
+		require_once 'inc/pantheon-updates.php';
 	}
 	if ( ! defined('RETURN_TO_PANTHEON_BUTTON') || RETURN_TO_PANTHEON_BUTTON ) {
 		require_once 'inc/pantheon-login-form-mods.php';
