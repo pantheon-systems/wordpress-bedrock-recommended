@@ -15,8 +15,8 @@ if ( ( defined( 'WP_INSTALLING' ) && WP_INSTALLING ) ) {
 // Add your mu-plugins here.
 $mu_plugins = [
 	'lh-hsts/lh-hsts.php',
-	'pantheon/pantheon.php',
 	'pantheon-advanced-page-cache/pantheon-advanced-page-cache.php',
+	'pantheon-wp-muplugin/pantheon.php',
 	'wp-native-php-sessions/pantheon-sessions.php',
 ];
 
