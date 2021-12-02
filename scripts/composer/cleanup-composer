@@ -58,15 +58,22 @@ function copy_files() {
 #
 function copy_bedrock_muplugins() {
   # Check for any of the bedrock mu-plugins.
-  echo "📂 💨  Copying Bedrock mu-plugins 1/3..."
-  if [ ! -f "web/wp-content/mu-plugins/bedrock-autoloader.php" ]; then
-    cp -v vendor/roots/bedrock/web/app/mu-plugins/bedrock-autoloader.php web/wp-content/mu-plugins/
-  fi
+  if [[
+      ( ! -f "web/wp-content/mu-plugins/bedrock-autoloader.php" ) ||
+      ( ! -f "web/wp-content/mu-plugins/register-theme-directory.php" )
+  ]]; then
+    echo "📂 💨  Copying Bedrock mu-plugins 1/3..."
+    if [ ! -f "web/wp-content/mu-plugins/bedrock-autoloader.php" ]; then
+      cp -v vendor/roots/bedrock/web/app/mu-plugins/bedrock-autoloader.php web/wp-content/mu-plugins/
+    fi
 
     echo "📂 💨  Copying Bedrock mu-plugins 2/3..."
     if [ ! -f "web/wp-content/mu-plugins/register-theme-directory.php" ]; then
+      cp -v vendor/roots/bedrock/web/app/mu-plugins/register-theme-directory.php web/wp-content/mu-plugins/
+    fi
 
-  echo "✅ Done!"
+    echo "✅ Done!"
+  fi
 }
 
 function remove_files() {
