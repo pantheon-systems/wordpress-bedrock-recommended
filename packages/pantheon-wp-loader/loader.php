@@ -27,7 +27,7 @@ foreach ( $mu_plugins as $file ) {
 	if ( file_exists( $path ) ) {
 		include_once $path;
 	} else {
-		error_log( sprintf( 'Tried to load %s but the file was not found.' ) );
+		error_log( sprintf( 'Tried to load %s but the file was not found.', $file ) );
 	}
 }
 unset( $file );
