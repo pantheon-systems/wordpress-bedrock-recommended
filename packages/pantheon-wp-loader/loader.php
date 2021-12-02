@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Pantheon MU Plugin Loader
  * Description: Loads the MU plugins required to run the site
- * Author: Pantheon Systems
+ * Author: Pantheon
  * Author URI: https://pantheon.io
  * Version: 1.0
  * License: MIT
