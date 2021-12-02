@@ -5,6 +5,6 @@
     "license": "MIT",
     "version": "1.0.0",
 	"require": {
-        "vlucas/phpdotenv": "^3.1.0"
+        "vlucas/phpdotenv": "^5.4"
     }
 }
