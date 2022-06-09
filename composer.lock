@@ -280,12 +280,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pantheon-systems/wp-main.git",
-                "reference": "16a3ebee6e21f4f4919dacf303a591f4c5983828"
+                "reference": "83514b79bb55e16ba31be10f47951394b59ef284"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pantheon-systems/wp-main/zipball/16a3ebee6e21f4f4919dacf303a591f4c5983828",
-                "reference": "16a3ebee6e21f4f4919dacf303a591f4c5983828",
+                "url": "https://api.github.com/repos/pantheon-systems/wp-main/zipball/83514b79bb55e16ba31be10f47951394b59ef284",
+                "reference": "83514b79bb55e16ba31be10f47951394b59ef284",
                 "shasum": ""
             },
             "require": {
@@ -301,7 +301,7 @@
                 "issues": "https://github.com/pantheon-systems/wp-main/issues",
                 "source": "https://github.com/pantheon-systems/wp-main/tree/1.0.0"
             },
-            "time": "2022-06-09T14:12:33+00:00"
+            "time": "2022-06-09T15:34:14+00:00"
         },
         {
             "name": "pantheon-systems/quicksilver-pushback",
