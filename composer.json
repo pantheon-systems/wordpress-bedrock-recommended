@@ -21,7 +21,8 @@
     ],
     "require": {
         "composer/installers": "^1.9",
-        "pantheon-systems/wordpress-integrations": "*",
+        "pantheon-systems/pantheon-wp-main": "^1.0",
+        "pantheon-systems/wordpress-bedrock-integrations": "^1.0",
         "pantheon-upstreams/upstream-configuration": "*"
     },
     "config": {
@@ -31,6 +32,10 @@
         "sort-packages": true,
         "platform": {
           "php": "7.4"
+        },
+        "allow-plugins": {
+            "composer/installers": true,
+            "roots/wordpress-core-installer": true
         }
     },
     "extra": {

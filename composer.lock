@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f655c397d0425bfd86034253724ae11c",
+    "content-hash": "85b44ce4884f0a23fada33a8856f533f",
     "packages": [
         {
             "name": "composer/installers",
@@ -243,12 +243,12 @@
             },
             "type": "library",
             "autoload": {
-                "psr-4": {
-                    "Env\\": "src/"
-                },
                 "files": [
                     "src/env_function.php"
-                ]
+                ],
+                "psr-4": {
+                    "Env\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -275,58 +275,33 @@
             "time": "2020-06-11T10:59:27+00:00"
         },
         {
-            "name": "pantheon-systems/pantheon-wp-config",
+            "name": "pantheon-systems/pantheon-wp-main",
             "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pantheon-systems/wp-main.git",
+                "reference": "83514b79bb55e16ba31be10f47951394b59ef284"
+            },
             "dist": {
-                "type": "path",
-                "url": "packages/pantheon-wp-config",
-                "reference": "a5cbb5f7f82972be633e6f214e28542463c8a7e9"
+                "type": "zip",
+                "url": "https://api.github.com/repos/pantheon-systems/wp-main/zipball/83514b79bb55e16ba31be10f47951394b59ef284",
+                "reference": "83514b79bb55e16ba31be10f47951394b59ef284",
+                "shasum": ""
             },
             "require": {
-                "vlucas/phpdotenv": "^5.4"
-            },
-            "type": "project",
-            "license": [
-                "MIT"
-            ],
-            "description": "The WordPress configuration file for use on Pantheon sites.",
-            "transport-options": {
-                "relative": true
-            }
-        },
-        {
-            "name": "pantheon-systems/pantheon-wp-loader",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "packages/pantheon-wp-loader",
-                "reference": "320ef775ff50cc1290e2a0d8d56feb20d515380d"
-            },
-            "type": "project",
-            "license": [
-                "MIT"
-            ],
-            "description": "A mu-plugin loader for WordPress sites hosted on Pantheon.",
-            "transport-options": {
-                "relative": true
-            }
-        },
-        {
-            "name": "pantheon-systems/pantheon-wp-muplugin",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "packages/pantheon-wp-muplugin",
-                "reference": "83d8b1bea032e5ea1a6252ca1df240762771af63"
+                "vlucas/phpdotenv": "*"
             },
             "type": "wordpress-muplugin",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
-            "description": "Advanced functions to integrate with the Pantheon platform.",
-            "transport-options": {
-                "relative": true
-            }
+            "description": "Pantheon mu-plugin for WordPress sites.",
+            "support": {
+                "issues": "https://github.com/pantheon-systems/wp-main/issues",
+                "source": "https://github.com/pantheon-systems/wp-main/tree/1.0.0"
+            },
+            "time": "2022-06-09T15:34:14+00:00"
         },
         {
             "name": "pantheon-systems/quicksilver-pushback",
@@ -358,17 +333,20 @@
             "time": "2020-08-20T22:12:09+00:00"
         },
         {
-            "name": "pantheon-systems/wordpress-integrations",
+            "name": "pantheon-systems/wordpress-bedrock-integrations",
             "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pantheon-systems/wordpress-bedrock-integrations.git",
+                "reference": "a175461f3362c454f560e2d4839c88e2f2aa2deb"
+            },
             "dist": {
-                "type": "path",
-                "url": "packages/wordpress-integrations",
-                "reference": "a31405d1ac5d2366f31b09a8fca6c591be3ebed7"
+                "type": "zip",
+                "url": "https://api.github.com/repos/pantheon-systems/wordpress-bedrock-integrations/zipball/a175461f3362c454f560e2d4839c88e2f2aa2deb",
+                "reference": "a175461f3362c454f560e2d4839c88e2f2aa2deb",
+                "shasum": ""
             },
             "require": {
-                "pantheon-systems/pantheon-wp-config": "*",
-                "pantheon-systems/pantheon-wp-loader": "*",
-                "pantheon-systems/pantheon-wp-muplugin": "*",
                 "pantheon-systems/quicksilver-pushback": "^2",
                 "roots/bedrock": "*",
                 "roots/wp-password-bcrypt": "^1.0.0",
@@ -391,13 +369,16 @@
                 "wp-coding-standards/wpcs": "^1.2.1"
             },
             "type": "project",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "description": "Add this project to any WordPress install based on pantheon-systems/wordpress-bedrock-recommend to enable it for use on Pantheon.",
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/pantheon-systems/wordpress-bedrock-integrations/issues",
+                "source": "https://github.com/pantheon-systems/wordpress-bedrock-integrations/tree/1.0.0"
+            },
+            "time": "2022-06-09T14:45:23+00:00"
         },
         {
             "name": "pantheon-upstreams/upstream-configuration",
@@ -417,16 +398,16 @@
         },
         {
             "name": "phpoption/phpoption",
-            "version": "1.8.0",
+            "version": "1.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/php-option.git",
-                "reference": "5455cb38aed4523f99977c4a12ef19da4bfe2a28"
+                "reference": "eab7a0df01fe2344d172bff4cd6dbd3f8b84ad15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/5455cb38aed4523f99977c4a12ef19da4bfe2a28",
-                "reference": "5455cb38aed4523f99977c4a12ef19da4bfe2a28",
+                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/eab7a0df01fe2344d172bff4cd6dbd3f8b84ad15",
+                "reference": "eab7a0df01fe2344d172bff4cd6dbd3f8b84ad15",
                 "shasum": ""
             },
             "require": {
@@ -434,7 +415,7 @@
             },
             "require-dev": {
                 "bamarni/composer-bin-plugin": "^1.4.1",
-                "phpunit/phpunit": "^6.5.14 || ^7.0.20 || ^8.5.19 || ^9.5.8"
+                "phpunit/phpunit": "^6.5.14 || ^7.5.20 || ^8.5.19 || ^9.5.8"
             },
             "type": "library",
             "extra": {
@@ -454,11 +435,13 @@
             "authors": [
                 {
                     "name": "Johannes M. Schmitt",
-                    "email": "schmittjoh@gmail.com"
+                    "email": "schmittjoh@gmail.com",
+                    "homepage": "https://github.com/schmittjoh"
                 },
                 {
                     "name": "Graham Campbell",
-                    "email": "hello@gjcampbell.co.uk"
+                    "email": "hello@gjcampbell.co.uk",
+                    "homepage": "https://github.com/GrahamCampbell"
                 }
             ],
             "description": "Option Type for PHP",
@@ -470,7 +453,7 @@
             ],
             "support": {
                 "issues": "https://github.com/schmittjoh/php-option/issues",
-                "source": "https://github.com/schmittjoh/php-option/tree/1.8.0"
+                "source": "https://github.com/schmittjoh/php-option/tree/1.8.1"
             },
             "funding": [
                 {
@@ -482,29 +465,29 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-08-28T21:27:29+00:00"
+            "time": "2021-12-04T23:24:31+00:00"
         },
         {
             "name": "roots/bedrock",
-            "version": "1.17.1",
+            "version": "1.18.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/bedrock.git",
-                "reference": "5f37b02779c162e96221d2029eaeb9762c004795"
+                "reference": "0cd202c0ce7df9268ffc0b116e084f42c21bc921"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roots/bedrock/zipball/5f37b02779c162e96221d2029eaeb9762c004795",
-                "reference": "5f37b02779c162e96221d2029eaeb9762c004795",
+                "url": "https://api.github.com/repos/roots/bedrock/zipball/0cd202c0ce7df9268ffc0b116e084f42c21bc921",
+                "reference": "0cd202c0ce7df9268ffc0b116e084f42c21bc921",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "^1.12",
                 "oscarotero/env": "^2.1",
-                "php": ">=7.1",
+                "php": ">=7.4",
                 "roots/bedrock-autoloader": "^1.0",
                 "roots/bedrock-disallow-indexing": "^2.0",
-                "roots/wordpress": "5.8.2",
+                "roots/wordpress": "5.8.3",
                 "roots/wp-config": "1.0.0",
                 "roots/wp-password-bcrypt": "1.1.0",
                 "vlucas/phpdotenv": "^5.3"
@@ -557,7 +540,7 @@
             "support": {
                 "forum": "https://discourse.roots.io/category/bedrock",
                 "issues": "https://github.com/roots/bedrock/issues",
-                "source": "https://github.com/roots/bedrock/tree/1.17.1"
+                "source": "https://github.com/roots/bedrock/tree/1.18.1"
             },
             "funding": [
                 {
@@ -569,7 +552,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2021-11-17T00:18:18+00:00"
+            "time": "2022-01-07T16:48:40+00:00"
         },
         {
             "name": "roots/bedrock-autoloader",
@@ -707,22 +690,22 @@
         },
         {
             "name": "roots/wordpress",
-            "version": "5.8.2",
+            "version": "5.8.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress.git",
-                "reference": "5.8.2"
+                "reference": "5.8.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/refs/tags/5.8.2"
+                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/refs/tags/5.8.3"
             },
             "require": {
                 "php": ">=5.3.2",
                 "roots/wordpress-core-installer": ">=1.0.0"
             },
             "provide": {
-                "wordpress/core-implementation": "5.8.2"
+                "wordpress/core-implementation": "5.8.3"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -761,7 +744,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2021-11-10T23:24:02+00:00"
+            "time": "2022-01-06T19:19:24+00:00"
         },
         {
             "name": "roots/wordpress-core-installer",
@@ -961,16 +944,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.6.1",
+            "version": "3.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "f268ca40d54617c6e06757f83f699775c9b3ff2e"
+                "reference": "5e4e71592f69da17871dba6e80dd51bce74a351a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/f268ca40d54617c6e06757f83f699775c9b3ff2e",
-                "reference": "f268ca40d54617c6e06757f83f699775c9b3ff2e",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/5e4e71592f69da17871dba6e80dd51bce74a351a",
+                "reference": "5e4e71592f69da17871dba6e80dd51bce74a351a",
                 "shasum": ""
             },
             "require": {
@@ -1013,24 +996,27 @@
                 "source": "https://github.com/squizlabs/PHP_CodeSniffer",
                 "wiki": "https://github.com/squizlabs/PHP_CodeSniffer/wiki"
             },
-            "time": "2021-10-11T04:00:11+00:00"
+            "time": "2021-12-12T21:44:58+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.23.0",
+            "version": "v1.26.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "46cd95797e9df938fdd2b03693b5fca5e64b01ce"
+                "reference": "6fd1b9a79f6e3cf65f9e679b23af304cd9e010d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/46cd95797e9df938fdd2b03693b5fca5e64b01ce",
-                "reference": "46cd95797e9df938fdd2b03693b5fca5e64b01ce",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/6fd1b9a79f6e3cf65f9e679b23af304cd9e010d4",
+                "reference": "6fd1b9a79f6e3cf65f9e679b23af304cd9e010d4",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1"
+            },
+            "provide": {
+                "ext-ctype": "*"
             },
             "suggest": {
                 "ext-ctype": "For best performance"
@@ -1038,7 +1024,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.23-dev"
+                    "dev-main": "1.26-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -1046,12 +1032,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Ctype\\": ""
-                },
                 "files": [
                     "bootstrap.php"
-                ]
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Ctype\\": ""
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1076,7 +1062,7 @@
                 "portable"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.23.0"
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.26.0"
             },
             "funding": [
                 {
@@ -1092,24 +1078,27 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-02-19T12:13:01+00:00"
+            "time": "2022-05-24T11:49:31+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.23.1",
+            "version": "v1.26.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "9174a3d80210dca8daa7f31fec659150bbeabfc6"
+                "reference": "9344f9cb97f3b19424af1a21a3b0e75b0a7d8d7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/9174a3d80210dca8daa7f31fec659150bbeabfc6",
-                "reference": "9174a3d80210dca8daa7f31fec659150bbeabfc6",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/9344f9cb97f3b19424af1a21a3b0e75b0a7d8d7e",
+                "reference": "9344f9cb97f3b19424af1a21a3b0e75b0a7d8d7e",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1"
+            },
+            "provide": {
+                "ext-mbstring": "*"
             },
             "suggest": {
                 "ext-mbstring": "For best performance"
@@ -1117,7 +1106,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.23-dev"
+                    "dev-main": "1.26-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -1125,12 +1114,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Mbstring\\": ""
-                },
                 "files": [
                     "bootstrap.php"
-                ]
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Mbstring\\": ""
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1156,7 +1145,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.23.1"
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.26.0"
             },
             "funding": [
                 {
@@ -1172,20 +1161,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-05-27T12:26:48+00:00"
+            "time": "2022-05-24T11:49:31+00:00"
         },
         {
             "name": "symfony/polyfill-php80",
-            "version": "v1.23.1",
+            "version": "v1.26.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php80.git",
-                "reference": "1100343ed1a92e3a38f9ae122fc0eb21602547be"
+                "reference": "cfa0ae98841b9e461207c13ab093d76b0fa7bace"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/1100343ed1a92e3a38f9ae122fc0eb21602547be",
-                "reference": "1100343ed1a92e3a38f9ae122fc0eb21602547be",
+                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/cfa0ae98841b9e461207c13ab093d76b0fa7bace",
+                "reference": "cfa0ae98841b9e461207c13ab093d76b0fa7bace",
                 "shasum": ""
             },
             "require": {
@@ -1194,7 +1183,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "1.23-dev"
+                    "dev-main": "1.26-dev"
                 },
                 "thanks": {
                     "name": "symfony/polyfill",
@@ -1202,12 +1191,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Php80\\": ""
-                },
                 "files": [
                     "bootstrap.php"
                 ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php80\\": ""
+                },
                 "classmap": [
                     "Resources/stubs"
                 ]
@@ -1239,7 +1228,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/v1.23.1"
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.26.0"
             },
             "funding": [
                 {
@@ -1255,20 +1244,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-07-28T13:41:28+00:00"
+            "time": "2022-05-10T07:21:04+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v5.4.0",
+            "version": "v5.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "d4394d044ed69a8f244f3445bcedf8a0d7fe2403"
+                "reference": "264dce589e7ce37a7ba99cb901eed8249fbec92f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/d4394d044ed69a8f244f3445bcedf8a0d7fe2403",
-                "reference": "d4394d044ed69a8f244f3445bcedf8a0d7fe2403",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/264dce589e7ce37a7ba99cb901eed8249fbec92f",
+                "reference": "264dce589e7ce37a7ba99cb901eed8249fbec92f",
                 "shasum": ""
             },
             "require": {
@@ -1306,11 +1295,13 @@
             "authors": [
                 {
                     "name": "Graham Campbell",
-                    "email": "hello@gjcampbell.co.uk"
+                    "email": "hello@gjcampbell.co.uk",
+                    "homepage": "https://github.com/GrahamCampbell"
                 },
                 {
                     "name": "Vance Lucas",
-                    "email": "vance@vancelucas.com"
+                    "email": "vance@vancelucas.com",
+                    "homepage": "https://github.com/vlucas"
                 }
             ],
             "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
@@ -1321,7 +1312,7 @@
             ],
             "support": {
                 "issues": "https://github.com/vlucas/phpdotenv/issues",
-                "source": "https://github.com/vlucas/phpdotenv/tree/v5.4.0"
+                "source": "https://github.com/vlucas/phpdotenv/tree/v5.4.1"
             },
             "funding": [
                 {
@@ -1333,7 +1324,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-11-10T01:08:39+00:00"
+            "time": "2021-12-12T23:22:04+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
@@ -1439,15 +1430,15 @@
         },
         {
             "name": "wpackagist-theme/twentynineteen",
-            "version": "2.1",
+            "version": "2.3",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/twentynineteen/",
-                "reference": "2.1"
+                "reference": "2.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentynineteen.2.1.zip"
+                "url": "https://downloads.wordpress.org/theme/twentynineteen.2.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1467,5 +1458,5 @@
     "platform-overrides": {
         "php": "7.4"
     },
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.3.0"
 }

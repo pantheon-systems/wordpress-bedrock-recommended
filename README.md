@@ -14,7 +14,6 @@ _This tool is an early stage, proof-of-concept and is not recommended for use on
 
 While the architecture and directory structure of this upstream is unlikely to change, some notable things need to happen before this upstream is fully ready for prime time.
 
-* **`/packages/*` should be in their own repositories** - Right now, the `pantheon-wp-config`, `pantheon-wp-loader`, `pantheon-wp-muplugin` and `wordpress-integrations` packages are being loaded in as path repositories. Each of these should live in their own repositories, published on Packagist and pulled in via Composer.
 * **Development script** - In the future, it would be beneficial to have a script that set up the `/packages/` folder for local development on those individual repositories, so that you could do all development within a single environment. This script would clone those repositories into `/packages/` so they would be used in place of the Packagist versions.
 
 ## Contributing
