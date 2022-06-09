@@ -10,14 +10,14 @@ function copy_files() {
   # Copy the mu-plugins loader file.
   if [ ! -f "web/wp-content/mu-plugins/loader.php" ]; then
     echo "📂 💨  Copying the mu-plugins loader file..."
-    cp -v vendor/pantheon-systems/pantheon-wp-loader/loader.php web/wp-content/mu-plugins/
+    cp -v vendor/pantheon-systems/wordpress-bedrock-integrations/loader.php web/wp-content/mu-plugins/
     echo "✅ Done!"
   fi
 
   # Copy the Pantheon upstream config file.
   if [ ! -f "web/wp/pantheon.upstream.yml" ]; then
     echo "📂 💨  Copying the Pantheon upstream config file..."
-    cp -v vendor/pantheon-systems/wordpress-integrations/pantheon.upstream.yml web/wp/
+    cp -v vendor/pantheon-systems/wordpress-bedrock-integrations/pantheon.upstream.yml web/wp/
     echo "✅ Done!"
   fi
 
@@ -31,21 +31,21 @@ function copy_files() {
   # Copy our wp-config.php file.
   if [ ! -f "web/wp-config.php" ]; then
     echo "📂 💨  Copying wp-config.php..."
-    cp -v vendor/pantheon-systems/pantheon-wp-config/wp-config.php web/
+    cp -v vendor/pantheon-systems/wordpress-bedrock-integrations/wp-config.php web/
     echo "✅ Done!"
   fi
 
   # Copy the default WP index.php file.
   if [ ! -f "web/index.php" ]; then
     echo "📂 💨  Copying default index file..."
-    cp -v vendor/pantheon-systems/wordpress-integrations/index.php web/
+    cp -v vendor/pantheon-systems/wordpress-bedrock-integrations/index.php web/
     echo "✅ Done!"
   fi
 
   # Copy the wp-cli.yml file.
   if [ ! -f "web/wp-cli.yml" ]; then
     echo "📂 💨  Copying WP-CLI configuration file..."
-    cp -v vendor/pantheon-systems/wordpress-integrations/wp-cli.yml web/
+    cp -v vendor/pantheon-systems/wordpress-bedrock-integrations/wp-cli.yml web/
     echo "✅ Done!"
   fi
 
