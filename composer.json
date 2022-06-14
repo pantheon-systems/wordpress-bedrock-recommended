@@ -20,7 +20,7 @@
         }
     ],
     "require": {
-        "composer/installers": "^1.9",
+        "composer/installers": "^2.0",
         "pantheon-systems/pantheon-wp-main": "^1.0",
         "pantheon-systems/wordpress-bedrock-integrations": "^1.0",
         "pantheon-upstreams/upstream-configuration": "*"
