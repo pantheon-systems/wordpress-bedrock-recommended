@@ -8,7 +8,7 @@ Unlike with other Pantheon upstreams, the WordPress core install, which you are 
 
 ## Unsupported software
 
-_This tool is an early stage, proof-of-concept and is not recommended for use on production sites._
+_This tool is an early stage, proof-of-concept and is not recommended for use on production sites._ The latest iteration of this proof-of-concept can be [found here](https://github.com/pantheon-systems/wordpress-composer-managed).
 
 ## TODOs
 
