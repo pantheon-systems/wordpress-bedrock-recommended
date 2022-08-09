@@ -3,7 +3,7 @@
 [![Deprecated](https://img.shields.io/badge/Pantheon-Deprecated-yellow?logo=pantheon&color=FFDC28)](https://pantheon.io/docs/oss-support-levels#Deprecated)
 
 ## No longer maintained
-This repository has been deprecated and superceded by [WordPress Composer Managed](https://github.com/pantheon-systems/wordpress-composer-managed).
+This repository has been deprecated and is superceded by [WordPress Composer Managed](https://github.com/pantheon-systems/wordpress-composer-managed).
 
 ## Local development
 
