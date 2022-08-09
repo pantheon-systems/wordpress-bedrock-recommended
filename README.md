@@ -1,6 +1,6 @@
 # Composer-enabled WordPress template
 
-[![Deprecated](https://img.shields.io/badge/Pantheon-Deprecated-yellow?logo=pantheon&color=FFDC28)](https://pantheon.io/docs/oss-support-levels#Deprecated)
+[![Deprecated](https://img.shields.io/badge/Pantheon-Deprecated-yellow?logo=pantheon&color=FFDC28)](https://pantheon.io/docs/oss-support-levels#deprecated)
 
 ## No longer maintained
 This repository has been deprecated and is superceded by [WordPress Composer Managed](https://github.com/pantheon-systems/wordpress-composer-managed).
