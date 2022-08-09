@@ -1,24 +1,9 @@
 # Composer-enabled WordPress template
 
-[![Unsupported](https://img.shields.io/badge/pantheon-unsupported-yellow?logo=pantheon&color=FFDC28&style=for-the-badge)](https://github.com/topics/unsupported?q=org%3Apantheon-systems)
+[![Deprecated](https://img.shields.io/badge/Pantheon-Deprecated-yellow?logo=pantheon&color=FFDC28)](https://pantheon.io/docs/oss-support-levels#Deprecated)
 
-This is Pantheon's recommended starting point for forking new [WordPress](https://wordpress.org) upstreams that work with the Platform's Integrated Composer build process. It ~is also~ is _intended to be_ the Platform's standard WordPress with Composer upstream.
-
-Unlike with other Pantheon upstreams, the WordPress core install, which you are unlikely to adjust while building sites, is not in the main branch of the repository. Instead, it is referenced as dependencies within [Roots/Bedrock](https://roots.io/bedrock/) that are installed by [Composer](https://getcomposer.org).
-
-## Unsupported software
-
-_This tool is an early stage, proof-of-concept and is not recommended for use on production sites._ The latest iteration of this proof-of-concept can be [found here](https://github.com/pantheon-systems/wordpress-composer-managed).
-
-## TODOs
-
-While the architecture and directory structure of this upstream is unlikely to change, some notable things need to happen before this upstream is fully ready for prime time.
-
-* **Development script** - In the future, it would be beneficial to have a script that set up the `/packages/` folder for local development on those individual repositories, so that you could do all development within a single environment. This script would clone those repositories into `/packages/` so they would be used in place of the Packagist versions.
-
-## Contributing
-
-Contributions are welcome in the form of GitHub issues and pull requests. If you would like to propose a change, please fork [pantheon-systems/wordpress-bedrock-recommended](https://github.com/pantheon-systems/wordpress-bedrock-recommended) and submit a PR to that repository.
+## No longer maintained
+This repository has been deprecated and superceded by [WordPress Composer Managed](https://github.com/pantheon-systems/wordpress-composer-managed).
 
 ## Local development
 
